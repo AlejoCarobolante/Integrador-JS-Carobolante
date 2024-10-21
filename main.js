@@ -1,3 +1,3 @@
-import { renderCategories } from "./services/categories";
-
+import { renderCategories } from "./services/categories.js";
+import './style.css';
 renderCategories();

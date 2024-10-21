@@ -11,7 +11,18 @@ export const renderCategories = ()=>{
     const liElements = ulList.querySelectorAll("li");
     liElements.forEach((liElement)=>{
         liElement.addEventListener("click",()=>{
-            console.log("click en", liElement.id);
+            handleClick(liElement);
         });
     });
+    const handleClick = (elemento)=> {
+        liElements.forEach((el)=>{
+            if (el.classList.contains('liActive')){
+                el.classList.remove('liActive');
+            }else{
+                if(elemento === el){
+                    el.classList.add('liActive');
+                }
+            }
+        })
+    }
 };
