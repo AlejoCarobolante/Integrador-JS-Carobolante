@@ -1,9 +1,11 @@
+/* GENERAL */
 *{
   margin: 0;
   padding: 0;
   font-family: "Rubik", sans-serif;
 }
 
+/* HEADER */
 .container_principalHeader{
   width: 100 vw;
   height: 8vh;
@@ -65,4 +67,21 @@ justify-content: center;
   background-color: transparent;
   color: white;
   border-radius: .4rem;
+}
+
+/* MAIN */
+
+.container_view{
+  display: grid;
+  grid-template-columns: .2fr .8fr;
+}
+
+.listAside{
+  background-color: blueviolet;
+  height: 92vh;
+}
+
+.store{
+  background-color: blue;
+  height: 92vh;
 }
