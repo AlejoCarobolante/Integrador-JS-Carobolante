@@ -38,7 +38,7 @@
 }
 
 .buttonSearch{
-border: 1px solid white;
+border: 3px solid white;
 background-color: transparent;
 border-radius: 0.4rem;
 padding: 0.4rem;
@@ -52,6 +52,15 @@ justify-content: center;
 
 .buttonSearch:hover{
   cursor: pointer;
+  background-color: #F04A3C;
+  color: white;
+  transition: .2s;
+}
+
+.buttonSearch:not(:hover){
+  background-color: #DA291C;
+  color: white;
+  transition: 0.2s;
 }
 
 .add_container{
@@ -63,11 +72,26 @@ justify-content: center;
   margin-right: 35px;
   display: flex;
   padding: .4rem;
-  border: 1px solid white;
+  border: 3px solid white;
   background-color: transparent;
   color: white;
   border-radius: .4rem;
+  cursor: pointer;
 }
+
+.Header__buttonAdd:hover{
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: 0.2s;
+  background-color: #F04A3C;
+  color: white;
+}
+
+.Header__buttonAdd:not(:hover){
+  background-color: #DA291C;
+  color: white;
+  transition: .2s;
+}
+
 
 /* MAIN */
 
@@ -132,6 +156,73 @@ justify-content: center;
   transition: 0.2s;
 }
 
-.liActive{
-background-color: 	#FFC72C;
+ul#listFilter li.liActive {
+  background-color: #DA291C;
+  color: white;
+}
+
+/* POPUPS */
+
+.msj_popUp{
+  text-align: center;
+}
+
+.popUpContainer__principal{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px)
+}
+
+.popUpContainer{
+  width: 50vw;
+  height: 50vh;
+  background-color: white;
+  box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.4);
+  border-radius: .4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.containerInput__PopUp{
+  margin-top: 15px;
+  display: flex;
+  gap: 2vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerInput__PopUp input,
+.containerInput__PopUp select{
+  width: 60%;
+  gap: 2vh;
+  border: 1px solid;
+  padding: .4rem;
+  border-radius: .4rem;
+}
+
+.containerButtonsPopUp{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button__PopUp{
+  border-radius: .1rem;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  background-color: rgb(188, 188, 188);
+  font-size: 2vh;
+}
+
+.delete{
+  background-color: #DA291C;
 }
