@@ -37,6 +37,7 @@ export const handleDeleteProduct = ()=>{
    const products = handleGetProductLocalStorage();
    const result = products.filter((el)=> el.id!==productoActivo.id);
    localStorage.setItem("products", JSON.stringify(result));
-   const newProducts = handleGetProductsToStore();
+   const newProducts = handleGetProductLocalStorage();
    handleRenderList(newProducts);
+   closenModal();
 }

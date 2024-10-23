@@ -59,8 +59,10 @@ acceptButton.addEventListener('click', ()=>{
 const deleteButton = document.getElementById("deleteButton");
 deleteButton.addEventListener("click", ()=>{
     handleButtonDelete();
+    
 })
 
-const buttonDelete = ()=>{
+const handleButtonDelete = ()=>{
     handleDeleteProduct();
+    closenModal();
 }
