@@ -39,15 +39,22 @@
       <div class="container_view">
         <aside class="listAside">
           <h2>Categorías
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter"><path d="M7 11h10v2H7zM4 7h16v2H4zm6 8h4v2h-4z"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: #F07E2E;transform: msFilter"><path d="M7 11h10v2H7zM4 7h16v2H4zm6 8h4v2h-4z"></path></svg>
           </h2>
           
           <ul id="listFilter"></ul>
         </aside>
-        <div class="store">
-          <h1>EN REMODELACION</h1>
+        <div class="store" id="storeContainer">
         </div>
       </div>
+
+
+
+
+
+
+
+
 
       <!-- POPUP -->
        <div class="popUpContainer__principal" id="modalPopUp">
@@ -61,9 +68,9 @@
             <input placeholder="Ingrese el precio" id="price" value="0" type="number">
             <select id="categoria">
               <option>Seleccione una categoría</option>
-              <option>Gaseosas</option>
-              <option>Hamburguesas</option>
-              <option>Papas</option>
+              <option value="gaseosas">Gaseosas</option>
+              <option value="hamburguesas">Hamburguesas</option>
+              <option value="papas">Papas</option>
             </select>
           </div>
           <div class="containerButtonsPopUp">
