@@ -318,3 +318,35 @@ ul#listFilter li.liActive {
 .category_title {
   text-transform: capitalize;
 }
+
+
+
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1280px) {
+ 
+  .containerProductStore{
+    grid-template-columns: repeat(4, .6fr);
+  }
+  
+  .containerTargetItem{
+    width: 15vw;
+  }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{
+  width: .7rem;
+  background-color: #FFFF;
+  border-radius: .4rem;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #DA291C;
+  border-radius: .4rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: #DA291C;
+  border-radius: .4rem;
+}
