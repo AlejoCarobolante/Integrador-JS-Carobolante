@@ -1,5 +1,7 @@
 import { setproductoActivo } from "../main";
-import { handleGetProductLocalStorage } from "../persistence/localstorage.JS"
+import { handleGetProductLocalStorage } from "../persistence/localStorage";
+import { openModal } from "./modal";
+
 
 export const handleGetProductsToStore = ()=>{
 
@@ -14,20 +16,18 @@ export const handleRenderList = (productosIn)=>{
     const gaseosas = productosIn.filter((el)=> el.categoria === "gaseosas");
 
     const rederProductGroup = (productos, title)=>{
-        if(
-            productos.length >0
-        ){
+        if(productos.length > 0) {
             const productosHTML = productos.map((producto, index)=>{
                 return`
                 <div class = "containerTargetItem" id='product-${producto.categoria}-${index}'>
                     <div>
-                        <img class= "img_prod" src = '${producto.imagen}'/>
-                        <div class= "text_content"> 
+                        <img class="img_prod" src='${producto.imagen}'/>
+                        <div class="text_content"> 
                             <div>
-                                <h2 class= "product_name"> ${producto.nombre}
+                                <h2 class="product_name"> ${producto.nombre}
                             </div>
                             <div class="targetProps">
-                                <p> <b>Precio:</b> ${producto.precio}</p>
+                                <p><b>Precio:</b> ${producto.precio}</p>
                             </div>
                         </div>
                     </div>
@@ -37,39 +37,38 @@ export const handleRenderList = (productosIn)=>{
             return `
             <section class="sectionStore">
                 <div class="containerTitleSection">
-                    <h3>${title}</h3>
+                    <h3 class="category_title">${title}</h3>
                 </div>
                 <div class="containerProductStore">
                     ${productosHTML.join("")}
                 </div>
             </section>
         `;
-        }else{
-            console.log("empty");
+        } else {
             return ""
         }
     };
 
     const appContainer = document.getElementById("storeContainer");
     appContainer.innerHTML = `
-    ${rederProductGroup(burgers, "Hamburguesas")}
-    ${rederProductGroup(papas, "Papas")}
-    ${rederProductGroup(gaseosas, "Gaseosas")}
+    ${rederProductGroup(burgers, "hamburguesas")}
+    ${rederProductGroup(papas, "papas")}
+    ${rederProductGroup(gaseosas, "gaseosas")}
 
     `;
     const addEvents = (productosIn)=>{
         if(productosIn){
             productosIn.forEach((element, index)=>{
-                const productContainer = document.getElementById(`product -${productosIn.categories} -${indext}`)
-            });
+                const productContainer = document.getElementById(`product-${element.categoria}-${index}`
+                );
 
-        }
-            
-        productContainer.addEventListener('click', ()=>{
+                productContainer.addEventListener('click', ()=>{
                 setproductoActivo(element);
                 openModal();
             });
-    }
+            });
+        }  
+    };
     addEvents(burgers);
     addEvents(papas);
     addEvents(gaseosas);

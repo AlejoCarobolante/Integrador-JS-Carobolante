@@ -285,6 +285,12 @@ ul#listFilter li.liActive {
   overflow: hidden;
 }
 
+.containerTargetItem:hover{
+  cursor: pointer;
+  transform: scale(1.01);
+  transition: .2s ease;
+}
+
 .targetProps{
   display: flex;
   justify-content: space-between;
@@ -307,4 +313,8 @@ ul#listFilter li.liActive {
 
 .img_prod:hover{
   transform: scale(1.1);
+}
+
+.category_title {
+  text-transform: capitalize;
 }
